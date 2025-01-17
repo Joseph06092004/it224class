@@ -1,12 +1,12 @@
 ##########
-## THIS SCRIPT CONFIGURES THE WINDOWS 10 MACHINE WITH
+## THIS SCRIPT CONFIGURES THE DC MACHINE WITH
 ## AN IP ADDRESS, PREFIX, GATEWAY AND DNS. THIS SCRIPT
-## ALSO RENAMES THE WINDOWS 10 MACHINE
+## ALSO RENAMES THE DC MACHINE
 ##########
-#			 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-# 			  The IP address for SWS is 192.168.0.100
-# 			  The gateway address is the same as DC's
-# 			 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# 			vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+# 			 The IP address for DC server is 192.168.0.10
+# 			 The gateway address is 192.168.0.250
+# 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ##########
 #
 # CHANGE THE PROMPT TO THE C DRIVE FOR ADDITIONAL SPACE
@@ -28,7 +28,7 @@ $interfaceAlias = (Get-NetIPConfiguration).InterfaceAlias
 #
 # CREATE A VARIABLE TO HOLD THE NEW IP ADDRESS
 #
-$ipAddress = "192.168.0.100"
+$ipAddress = "192.168.0.10"
 
 #
 # CREATE A VARIABLE TO HOLD THE GATEWAY ADDRESS
@@ -58,4 +58,4 @@ Update-Help
 #
 # RENAME THIS NODE AND RESTART
 #
-Rename-Computer -NewName IT224-PC -Restart
+Rename-Computer -NewName IT224-DC -Restart
